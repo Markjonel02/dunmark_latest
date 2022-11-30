@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tile Calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="tilecalc.css">
+</head>
+
+<body>
+    <div class="main">
+        <header>Tile Calculator</header>
+        <form class="form py-4">
+            <div class="row" id="nc">
+                <div class="col-sm-12 col-md-6 ps-4">Select Category:
+                    <select class="ms-3" name="tileCat" id="cat">
+                        <option value="option1">Porcelaine</option>
+                        <option value="option2">Ceramic</option>
+                    </select>
+                </div>
+                <div class="col-sm-12 col-md-6 ps-4">Select Item:
+                    <select class="ms-3" name="tileName" id="tn">
+                        <option value="option3">Angel White</option>
+                        <option value="option4">Bounce Beiege</option>
+                        <option value="option5">Black and White</option>
+                        <option value="option6">Citrus Beiege</option>
+                    </select>
+                </div>
+                <div class="col-sm-12 col-md-6 ps-4">Select Tile size:
+                    <select class="ms-4" name="tileName" id="ts">
+                        <option value="option7">20 x 20</option>
+                        <option value="option8">20 x 30</option>
+                        <option value="option9">30 x 60</option>
+                        <option value="option20">35 x 90</option>
+                    </select>
+                </div>
+                <div class="col-sm-12 col-md-6 ps-4">Floor Area:
+                    <input class="ms-3 text-center" type="text" name="floorare" id="fa" autocomplete="off" placeholder="Enter floor area">
+                </div>
+
+                <div class="col-sm-12 mt-3" id="bt">
+                    <button type="button" class="btn btn-dark btn" id="ds" onclick="showResult()">Display Results</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+    <div class="result" id="result">
+        <header>Approximate Results</header>
+        <div class="resultbody">
+            <table class="table table-bordered">
+                <tr>
+                    <th>Tile Category:</th>
+                    <td>Porcelaine</td>
+                </tr>
+                <tr>
+                    <th>Tile Name:</th>
+                    <td>Angel White</td>
+                </tr>
+                <tr>
+                    <th>Size: </th>
+                    <td>20 x 30</td>
+                </tr>
+                <tr>
+                    <th>Floor Area (sq. meters):</th>
+                    <td>23</td>
+                </tr>
+                <tr>
+                    <th>Number of Tiles</th>
+                    <td>575</td>
+                </tr>
+                <tr>
+                    <th>Price</th>
+                    <td>Php 69,000.00 | Php 120.00 pc</td>
+                </tr>
+            </table>
+        </div>
+        <input type="checkbox" name="resultcheck" id="resultcheck" class="d-none">
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        var resultbox = document.getElementById("result").style;
+        var resultcheck = document.getElementById("resultcheck").checked;
+
+
+        function showResult() {
+            if (resultcheck == false) {
+                resultcheck = true;
+            } else {
+                resultcheck = false;
+            }
+
+            if (resultcheck == false) {
+                resultbox.opacity = "0";
+            } else {
+                resultbox.opacity = "1";
+            }
+        }
+    </script>
+</body>
+
+</html>
